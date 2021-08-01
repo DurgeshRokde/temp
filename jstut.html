@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="result"></div>
+    <input type="text" name="" id="name">
+    <button id="btn">click</button>
+    <script>
+        // spread operator
+        let arr1 = ["Apple", "Samsung", "oppo", "mi"];
+        let arr2 = ["Banana", "cherry"];
+        let arr = [...arr1, ...arr2];
+        console.log(arr);
+        document.write(arr);
+
+        arr.map((favItem, index) => {
+            console.log(index, favItem);
+        })
+
+        // fat arrow fun
+        const displayTime = () => {
+            document.getElementById('result').innerHTML = new Date().toDateString();
+        }
+
+        displayTime();
+
+        // array and object destructuring
+
+        const [firstFav, , , leastFav] = arr1;
+        console.log(firstFav, leastFav);
+
+        const obj = {
+            name: "Aditya",
+            roll: 42
+        }
+
+        const { name, roll } = obj;
+
+        console.log(name, roll);
+
+
+
+        let btn1 = document.getElementById('btn');
+        btn1.addEventListener('click', () => {
+            let userName = document.getElementById('name').value;
+            console.log(userName);
+        })
+
+        // let age = prompt("confirm your age?");
+        // console.log(age);
+
+        // let isEighteenPlus = confirm("are you 18+?")
+
+        // if (isEighteenPlus) {
+        //     console.log("now you can vote");
+        // } else {
+        //     console.log("unable to vote");
+        // }
+
+
+        // string
+        // object
+        // undefined
+        // boolean
+        // null
+
+        // String Methods
+
+        let str = "adity.a@demo.com";
+
+        let atSymbol = str.indexOf('@');
+
+        console.log(`index ${str.indexOf('.')} lstIndex ${str.lastIndexOf('.')}`);
+
+        let Name1 = "this is javascript tutorial";
+
+        console.log(Name1.charAt(0));
+        console.log(Name1.charCodeAt(0));
+
+        // slice(index, lastindex)
+        console.log(Name1.slice(0, 7));
+
+        // substr(index, length)
+        console.log(Name1.substr(0, 7));
+
+        str = str.split("@");
+        console.log(str.join(""));
+
+        let num = prompt("enter any number", "12345");
+        console.log(num.split("").sort().reverse().join(""));
+
+
+
+    </script>
+</body>
+
+</html>
